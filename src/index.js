@@ -48,11 +48,3 @@ function toReadable1000(number) {
 	}
 	return numberArr[a] + ' hundred ' + tenNumberArr[b] + ' ' + numberArr[c]
 }
-
-
-
-// console.log(toReadable(0))
-// console.log(toReadable(1))
-// console.log(toReadable(10))
-// console.log(toReadable(19))
-// console.log(toReadable(55))
