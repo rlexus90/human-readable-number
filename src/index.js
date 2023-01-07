@@ -33,6 +33,7 @@ function toReadable100(number) {
 		b = 0;
 	a = Math.floor(number / 10);
 	b = number - a * 10;
+	if (b === 0) return tenNumberArr[a]
 	return tenNumberArr[a] + ' ' + numberArr[b]
 }
 
@@ -43,8 +44,8 @@ function toReadable1000(number) {
 	a = Math.floor(number / 100);
 	b = Math.floor((number - a * 100) / 10);
 	c = number - a * 100 - b * 10;
-	if (b < 2) {
-		return numberArr[a] + ' hundred ' + numberArr[number - a * 100]
-	}
+	if (b === 0 && c === 0) return numberArr[a] + ' hundred'
+	if (b < 2) return numberArr[a] + ' hundred ' + numberArr[number - a * 100]
+	if (c === 0) return numberArr[a] + ' hundred ' + tenNumberArr[b]
 	return numberArr[a] + ' hundred ' + tenNumberArr[b] + ' ' + numberArr[c]
 }
